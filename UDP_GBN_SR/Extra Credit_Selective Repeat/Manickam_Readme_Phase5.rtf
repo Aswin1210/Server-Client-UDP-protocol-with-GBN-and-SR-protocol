@@ -1,0 +1,62 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf100
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww28600\viewh15180\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 EECE 5830: Network Design \
+Project Phase 5: Selective Repeat Protocol over an unreliable UDP channel\
+Author: Aswin Kumar Manickam, 01624359.\
+\
+File Submitted:\
+	1. Server.py\
+	2. Client.py\
+	3. Globals.py\
+	4. Functions.py\
+	5. Send_Receive.py\
+	6. Lion.jpg\
+	7. Tiger.bmp\
+\
+Purpose of Each file:\
+	1. Server.py has the main program for the server to receive a file.\
+	2. Client.py has the main program for the client to send a file.\
+	3. Globals.py has the common variables for both server and client.\
+	4. Functions.py has the functions for checksum, file size, number of time loop has to run, Bit-error condition, data corruption, make packet, extracting packet.\
+	5. Send_Receive.py has the RDT protocol for server and client to send/receive file with sequence number, checksum along with the data.\
+	6. Lion.jpg is the image file for transmission.\
+\
+Program Execution:\
+	WINDOW SIZE\
+	1. Set window size in the Globals.py \
+	2. Also Make sure to change the window size in the Send_Receive.py below the class GBN. (Self.Window_Size= User value).\
+	Note: Make sure to set the same window size at both places in the code.\
+\
+	BIT-ERROR\
+	1. There is an variable E_prob which the error probability in the server side and client side.\
+	2. Error probability in the SERVER side refers to the DATA-corruption. (Set E_prob in server side alone if you need to see only data corruption.)\
+	3. Error probability in the CLIENT side refers to the ACK-corruption.	(Set E_prob in client side alone if you need to see only Ack corruption.)\
+	4. Set E_Prob from minimum of 0 (No-error) to maximum of 99 (99% chance of corrupting the data).\
+\
+	PACKET LOSS\
+	1. There is an variable P_Drop which the packet dropping probability in the server side and client side.\
+	2. Packet dropping probability in the SERVER side refers to the DATA-Packet Loss. (Set P_Drop in server side alone if you need to see only data packet loss.)\
+	3. Packet dropping probability in the CLIENT side refers to the ACK-Packet Loss. (Set P_Drop in client side alone if you need to see only Ack packet loss.)\
+	4. Set P_Drop from minimum of 0 (No-error) to maximum of 99 (99% chance of Packet Loss).\
+\
+	After Bit_Error or Packet_Loss value is given \
+	1. Run Server.py first.\
+	2. Run Client.py next and you can see file transfer starts.\
+	3. Check Server.py console again to make sure data has been transferred successfully.\
+	Note: Execution time \'91start-time\'92 is given in global variable.\
+\
+\
+Note: For the BMP image file\
+The Procedure to transfer a BMP image file:\
+1. The code can transfer .bmp file too. For that, go to client.py then change f=open(\'91Tiger
+\b .bmp\'92
+\b0 ,\'92rb\'92) \
+2. The server.py, p=open(\'91Received_File
+\b .bmp\'92
+\b0 ,\'92wb\'92) has to be changed\
+Make sure not to give same filename in client.py and server.py}
